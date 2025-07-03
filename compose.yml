@@ -31,4 +31,5 @@ services:
       - 9080:80
     volumes:
       - ./blog:/var/www/perlite/blog:ro
+      # 和nginx容器路径不一样
       - ./perlite.conf:/etc/nginx/http.d/default.conf:ro
