@@ -1,0 +1,34 @@
+services:
+  perlite:
+    image: sixmillions/ob-web:1.6
+    container_name: ob-web
+    # restart: unless-stopped
+    environment:
+      - NOTES_PATH=blog
+      - HIDE_FOLDERS=docs,private,trash
+      - HIDDEN_FILE_ACCESS=false
+      - LINE_BREAKS=true
+      - ABSOLUTE_PATHS=false
+      - ALLOWED_FILE_LINK_TYPES=pdf,mp4
+      - DISABLE_POP_HOVER=false
+      - SHOW_TOC=true
+      - SHOW_LOCAL_GRAPH=true
+      - HOME_FILE=README
+      - FONT_SIZE=15
+      - HTML_SAFE_MODE=true
+      - TEMP_PATH=/tmp
+      - SITE_TITLE=six
+      - SITE_TYPE=article
+      - SITE_URL=
+      - SITE_IMAGE=
+      - SITE_DESC=
+      - SITE_NAME=Perlite
+      - SITE_TWITTER=https://x.com/
+      - SITE_LOGO=perlite.svg
+      - SITE_HOMEPAGE=https://www.baidu.com/
+      - SITE_GITHUB=https://github.com/sixmillions
+    ports:
+      - 9080:80
+    volumes:
+      - ./blog:/var/www/perlite/blog:ro
+      - ./perlite.conf:/etc/nginx/http.d/default.conf:ro
