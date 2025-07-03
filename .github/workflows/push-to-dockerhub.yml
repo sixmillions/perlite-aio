@@ -9,6 +9,8 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
+    # 仅当 commit message 以 "publish" 开头时运行此任务
+    if: startsWith(github.event.head_commit.message, 'publish')
     steps:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
