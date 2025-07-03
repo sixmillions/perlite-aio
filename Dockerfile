@@ -9,7 +9,7 @@ RUN apk update && \
     rm -rf /var/cache/apk/*
 
 COPY ./perlite.conf /etc/nginx/http.d/default.conf
-COPY supervisord.conf /etc/supervisord.conf
+COPY ./supervisord.conf /etc/supervisord.conf
 
 WORKDIR /var/www/perlite/blog
 COPY ./README.md ./
