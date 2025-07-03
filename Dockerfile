@@ -16,5 +16,4 @@ COPY ./README.md ./
 
 EXPOSE 80
 
-# CMD ["nginx", "-g", "daemon off;"]
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]

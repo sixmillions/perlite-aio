@@ -6,6 +6,12 @@
 
 使用一个容器启动
 
+```
+docker build -t sixmillions/ob-web:1.6 .
+
+docker run -d --rm --name ob-web -p 9080:80 sixmillions/ob-web:1.6
+```
+
 ## 发布到 DockerHub
 
 commmit message 以 publish 开头
@@ -13,6 +19,10 @@ commmit message 以 publish 开头
 ```
 git commit -m "publish: 发布"
 ```
+
+## supervisor配置详解
+
+https://www.cnblogs.com/justaman/p/12452516.html
 
 ## ClawCloud
 
